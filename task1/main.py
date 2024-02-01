@@ -1,9 +1,11 @@
 import random
 
+
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+
 
 class LinkedList:
     def __init__(self):
@@ -26,6 +28,7 @@ class LinkedList:
             current_node = current_node.next
         print("None")
 
+
 def sorting(linked_list):
     values = []
     current = linked_list.head
@@ -41,6 +44,7 @@ def sorting(linked_list):
 
     return linked_list
 
+
 def insert_sort(arr):
     for i in range(1, len(arr)):
         key = arr[i]
@@ -50,6 +54,7 @@ def insert_sort(arr):
             j -= 1
         arr[j + 1] = key
     return arr
+
 
 def reverse(linked_list):
     current = linked_list.head
@@ -90,10 +95,12 @@ def merge(list1, list2):
 
     return merged_list
 
+
 def init_list(list):
-    for i in range(0,10):
+    for i in range(0, 10):
         list.append(random.randint(1, 50))
     return list
+
 
 def main():
     linked_list1 = LinkedList()
@@ -104,7 +111,7 @@ def main():
 
     linked_list3 = LinkedList()
     linked_list3 = init_list(linked_list3)
-   
+
     print("\nHаписати функцію, яка реалізує реверсування однозв'язного списку, змінюючи посилання між вузлами")
     print("Початковий список:")
     linked_list3.display()
@@ -116,19 +123,19 @@ def main():
     print("Початковий список:")
     linked_list1.display()
     print("Сортований список:")
-    linked_list1= sorting(linked_list1)
+    linked_list1 = sorting(linked_list1)
     linked_list1.display()
-
 
     print("\n\nНаписати функцію, що об'єднує два відсортовані однозв'язні списки в один відсортований список")
     print("Початковий список:")
     linked_list1.display()
-    linked_list2= sorting(linked_list2)
+    linked_list2 = sorting(linked_list2)
     linked_list2.display()
 
     print("Зʼєднаний список:")
     merged_list = merge(linked_list1, linked_list2)
     merged_list.display()
+
 
 if __name__ == "__main__":
     main()
