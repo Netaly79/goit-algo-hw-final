@@ -128,3 +128,10 @@ H => 2
 
 ![DFS](./task5/DFS.png)
 ![BFS](./task5/BFS.png)
+
+
+ТАСК 6:
+
+Результат жадібного алгоритма: ['cola', 'potato', 'pepsi', 'hot-dog']
+
+Результат динамічного алгоритма: ['potato', 'cola', 'pepsi', 'pizza']
