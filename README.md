@@ -116,3 +116,15 @@ F => 8
 G => 10
 
 H => 2
+
+
+ТАСК 4:
+
+
+![Купа](./task4/task4.png)
+
+
+ТАСК 5:
+
+![DFS](./task5/DFS.png)
+![BFS](./task5/BFS.png)
