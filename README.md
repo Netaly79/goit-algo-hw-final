@@ -138,4 +138,5 @@ H => 2
 
 
 ТАСК 7:
+
 ![Monte Carlo](./task7/Monte%20Carlo.png)
