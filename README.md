@@ -135,3 +135,7 @@ H => 2
 Результат жадібного алгоритма: ['cola', 'potato', 'pepsi', 'hot-dog']
 
 Результат динамічного алгоритма: ['potato', 'cola', 'pepsi', 'pizza']
+
+
+ТАСК 7:
+![Monte Carlo](./task7/Monte%20Carlo.png)
