@@ -55,6 +55,33 @@ def insert_sort(arr):
         arr[j + 1] = key
     return arr
 
+def sorting_by_head(head):
+    if head is None or head.next is None:
+        return head
+
+    sorted_head = None
+    current = head
+
+    while current is not None:
+        next_node = current.next
+        sorted_head = insert_sort_by_head(sorted_head, current)
+        current = next_node
+
+    return sorted_head
+
+def insert_sort_by_head(head, new_node):
+    if head is None or head.data >= new_node.data:
+        new_node.next = head
+        return new_node
+
+    current = head
+    while current.next is not None and current.next.data < new_node.data:
+        current = current.next
+
+    new_node.next = current.next
+    current.next = new_node
+
+    return head
 
 def reverse(linked_list):
     current = linked_list.head
@@ -73,8 +100,8 @@ def reverse(linked_list):
 def merge(list1, list2):
     merged_list = LinkedList()
 
-    current1 = list1.head
-    current2 = list2.head
+    current1 = list1
+    current2 = list2
 
     while current1 and current2:
         if current1.data < current2.data:
@@ -83,7 +110,6 @@ def merge(list1, list2):
         else:
             merged_list.append(current2.data)
             current2 = current2.next
-        merged_list.display()
 
     while current1:
         merged_list.append(current1.data)
@@ -94,6 +120,13 @@ def merge(list1, list2):
         current2 = current2.next
 
     return merged_list
+
+def print_by_head(head):
+    current = head
+    while current:
+        print(current.data, end=" -> ")
+        current = current.next
+    print("None")
 
 
 def init_list(list):
@@ -123,17 +156,17 @@ def main():
     print("Початковий список:")
     linked_list1.display()
     print("Сортований список:")
-    linked_list1 = sorting(linked_list1)
-    linked_list1.display()
+    linked_list1_head = sorting_by_head(linked_list1.head)
+    print_by_head(linked_list1_head)
 
     print("\n\nНаписати функцію, що об'єднує два відсортовані однозв'язні списки в один відсортований список")
     print("Початковий список:")
-    linked_list1.display()
-    linked_list2 = sorting(linked_list2)
-    linked_list2.display()
+    print_by_head(linked_list1_head)
+    linked_list2_head = sorting_by_head(linked_list2.head)
+    print_by_head(linked_list2_head)
 
     print("Зʼєднаний список:")
-    merged_list = merge(linked_list1, linked_list2)
+    merged_list = merge(linked_list1_head, linked_list2_head)
     merged_list.display()
 
 
